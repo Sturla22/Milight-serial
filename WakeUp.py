@@ -10,7 +10,7 @@ for i in range(25):
 	m.color(1,160-i)
 	sleep(1)
 m.white(1)
-m.brightness(1,16)
-for i in range(10):
-	m.brightness(1,i+17)
+m.brightness(1,6)
+for i in range(20):
+	m.brightness(1,i+7)
 	sleep(1)
