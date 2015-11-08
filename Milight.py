@@ -19,6 +19,7 @@ WHITE = [chr(194),chr(197),chr(199),chr(201),chr(203)]
 class Milight:
     def grp_ctrl(self,grp,state):
         """grp_ctrl(grp,state)
+        switches on grp
         grp:
         0 = All
         1 - 4 corresponding groups
@@ -51,11 +52,25 @@ class Milight:
             else:
                 write(GRP4_OFF)
     def white(self,grp):
+        """white(grp)
+        sets all lights in grp to white
+        grp:
+        0 = All
+        1 - 4 corresponding groups
+        """
         self.grp_ctrl(grp,True)
         sleep(0.1)
         write(WHITE[grp])
 
     def brightness(self,grp,luminosity):
+        """brightness(grp,luminosity)
+        sets the brightness of grp to luminosity
+        grp:
+        0 = All
+        1 - 4 corresponding groups
+        luminosity:
+        2<=luminosity<=27
+        """
         self.grp_ctrl(grp,True)
         sleep(0.1)
         if luminosity > 1 and luminosity < 28:
@@ -67,6 +82,14 @@ class Milight:
             else:
                 write(chr(78)+chr(27))
     def color(self,grp,color):
+        """color(grp,color)
+        sets the color of grp to color
+        grp:
+        0 = All
+        1 - 4 corresponding groups
+        color:
+        0<=color<=255
+        """
         self.grp_ctrl(grp,True)
         sleep(0.1)
         if color > 0 and color < 256:
