@@ -6,6 +6,11 @@ m.grp_ctrl(1,True)
 m.brightness(1,2)
 m.color(1,144)
 for i in range(25):
-	m.brightness(1,i)
-	m.color(1,144-i)
+	m.brightness(1,i+2)
+	m.color(1,160-i)
 	sleep(1)
+m.white(1)
+m.brightness(16)
+for i in range(10):
+	m.brightness(i+17)
+	m.sleep(1)
