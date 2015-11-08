@@ -2,15 +2,24 @@
 from Milight import Milight
 from time import sleep
 m = Milight()
-m.grp_ctrl(1,True)
-m.brightness(1,2)
-m.color(1,144)
+
+GROUP = 1
+INTERVAL = 10
+
+m.grp_ctrl(GROUP, True)  # Lights on for group 1
+m.brightness(GROUP, 2)  # Lower brightness just in case
+m.color(GROUP, 144)  # Set desired starting color
+
+# sunrise effect
 for i in range(25):
-	m.brightness(1,i+2)
-	m.color(1,160-i)
-	sleep(1)
-m.white(1)
-m.brightness(1,6)
-for i in range(20):
-	m.brightness(1,i+7)
-	sleep(1)
+    # this offset should really be implented in the m object...
+    m.brightness(GROUP, i+2)
+    m.color(GROUP, 160-i)
+    sleep(INTERVAL)
+
+m.white(GROUP)
+m.brightness(GROUP, 6)
+
+for i in range(21):
+    m.brightness(GROUP, i+7)
+    sleep(INTERVAL)
