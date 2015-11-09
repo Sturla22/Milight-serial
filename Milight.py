@@ -71,14 +71,14 @@ class Milight:
         0 = All
         1 - 4 corresponding groups
         luminosity:
-        2<=luminosity<=27
+        1<=luminosity<=25
         """
         self.grp_ctrl(grp, True)
-        if luminosity > 1 and luminosity < 28:
-            write(chr(78)+chr(luminosity))
+        if luminosity > 0 and luminosity < 26:
+            write(chr(78)+chr(luminosity+2))
         else:
             # shold probably throw an exception
-            if luminosity <= 1:
+            if luminosity <= 0:
                 write(chr(78)+chr(2))
             else:
                 write(chr(78)+chr(27))
