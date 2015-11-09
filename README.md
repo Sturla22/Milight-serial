@@ -12,3 +12,4 @@ Just clone this repository and run
 >sudo python2 Milight.py
 
 for a quick test (assuming you have some lights paired to group 1 and/or 2)
+(if you are a member of the group tty you can omit the sudo)

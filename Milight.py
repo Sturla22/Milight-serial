@@ -62,7 +62,6 @@ class Milight:
         1 - 4 corresponding groups
         """
         self.grp_ctrl(grp, True)
-        sleep(0.1)
         write(WHITE[grp])
 
     def brightness(self, grp, luminosity):
@@ -75,7 +74,6 @@ class Milight:
         2<=luminosity<=27
         """
         self.grp_ctrl(grp, True)
-        sleep(0.1)
         if luminosity > 1 and luminosity < 28:
             write(chr(78)+chr(luminosity))
         else:
@@ -95,7 +93,6 @@ class Milight:
         0<=color<=255
         """
         self.grp_ctrl(grp, True)
-        sleep(0.1)
         if color > 0 and color < 256:
             write(chr(64)+chr(color))
         else:
