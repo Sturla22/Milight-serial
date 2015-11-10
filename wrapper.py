@@ -7,7 +7,7 @@ m = Milight()
 # BRT; 0-25
 if len(sys.argv)<3:
 	sys.exit("ERROR: too few args\n usage: ./wrapper.py GRP ON/OFF [-c CLR] [-b BRT]")
-group = sys.argv[1]
+group = int(sys.argv[1])
 if sys.argv[2]=="ON":
 	if len(sys.argv)<4:
 		print "ON"
@@ -15,10 +15,10 @@ if sys.argv[2]=="ON":
 	elif len(sys.argv)<6:
 		if sys.argv[3]=="-c":
 			print "COL"
-			m.color(group,sys.argv[4])
+			m.color(group,int(sys.argv[4]))
 		elif sys.argv[3]=="-b":
 			print "BRT"
-			m.brightness(group,sys.argv[4])
+			m.brightness(group,int(sys.argv[4]))
 		else:
 			sys.exit("usage: ./wrapper.py GRP ON/OFF [-c CLR] [-b BRT]")
 	else:
