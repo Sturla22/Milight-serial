@@ -1,7 +1,7 @@
 import sys
 from Milight import Milight
 m = Milight()
-# ./wrapper.py GRP ON/OFF [-c CLR] [-b BRT]
+# ./wrapper.py GRP ON/OFF [-c CLR] [-b BRT] [-w]
 # GRP; 0:All 1-4:1-4
 # CLR; 0-254
 # BRT; 0-25
@@ -12,6 +12,10 @@ if sys.argv[2]=="ON":
 	if len(sys.argv)<4:
 		print "ON"
 		m.grp_ctrl(group,True)
+	elif len(sys.argv)<5:
+		if sys.argv[3]=="-w":
+			print "COL"
+			m.white(group)
 	elif len(sys.argv)<6:
 		if sys.argv[3]=="-c":
 			print "COL"
