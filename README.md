@@ -5,6 +5,13 @@ through a serial connection to the Milight bridge.
 By following [this](https://getpocket.com/a/read/780694748) tutorial 
 you can get a serial connection to your milight bridge.
 
+*note:* you can stop your raspberry pi from writing stuff to the serial on startup by disabling 
+the terminal over serial. To do this you run: 
+>sudo raspi-config
+
+select: 8. Advanced Options, A8 Serial, and choose No
+
+
 Instead of using the program given in the tutorial you can use this to
 control your lights directly from your raspberry pi (or from any serial capable computer really)
 
