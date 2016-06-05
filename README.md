@@ -2,7 +2,7 @@
 This is an implementation of the [limitless led API](http://www.limitlessled.com/dev/) in Python
 through a serial connection to the Milight bridge.
 
-By following [this](https://getpocket.com/a/read/780694748) tutorial 
+By following [this](https://servernetworktech.com/2014/09/limitlessled-wifi-bridge-4-0-conversion-raspberry-pi/) tutorial 
 you can get a serial connection to your milight bridge.
 
 *note:* you can stop your raspberry pi from writing stuff to the serial on startup by disabling 
